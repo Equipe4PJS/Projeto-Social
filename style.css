@@ -1,2 +1,215 @@
 @charset "UTF-8";
 
+:root {
+  --cor-primaria: #ff9f1c;
+  --cor-secundaria: #2ec4b6;
+  --cor-fundo: #fff6e5;
+  --cor-texto: #333;
+  --cor-botao: #2ec4b6;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cor-fundo);
+  margin: 0;
+  color: var(--cor-texto);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--cor-primaria);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.8rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+.btn-login {
+  background: white;
+  color: var(--cor-primaria);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: var(--cor-secundaria);
+  color: white;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;     /* empilha o conteúdo */
+  align-items: center;        /* centraliza horizontalmente */
+  justify-content: center;    /* centraliza verticalmente */
+  text-align: center;
+  min-height: 80vh;           /* ocupa boa parte da tela */
+  padding: 2rem;
+  background-color: var(--cor-fundo);
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--cor-texto);
+}
+
+.btn-primary {
+  background: var(--cor-botao);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--cor-secundaria);
+}
+
+/* Seções */
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.sobre p {
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+.jogos .cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation-duration: 0.5s;
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+#Jogo1 {
+  background-color: #ff9f1c;
+}
+
+#Jogo2 {
+  background-color: #2ec4b6;
+}
+
+#Jogo3 {
+  background-color: #ff9f1c;
+}
+
+#Jogo4 {
+  background-color: #2ec4b6;
+}
+
+/* Professores */
+.professores {
+  background-color: var(--cor-secundaria);
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--cor-primaria);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: var(--cor-primaria);
+  color: white;
+}
+
+/* Rodapé */
+.footer {
+  background-color: var(--cor-secundaria);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-img img {
+    margin-top: 2rem;
+  }
+}
