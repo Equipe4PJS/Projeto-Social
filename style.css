@@ -79,6 +79,8 @@ body {
 
 .hero-text {
   max-width: 600px;
+  margin-left: 343.50px;
+  justify-content: center;
 }
 
 .hero h1 {
@@ -131,9 +133,15 @@ section {
   background: white;
   border-radius: 15px;
   padding: 2rem;
-  width: 250px;
+  width: 200px;
+  height: 300px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+}
+
+.cards a {
+  text-decoration: none;
+  color: black;
 }
 
 .card:hover {
@@ -149,19 +157,19 @@ section {
 }
 
 #Jogo1 {
-  background-color: #ff9f1c;
+  background-color: #2ec4b6;
 }
 
 #Jogo2 {
-  background-color: #2ec4b6;
-}
-
-#Jogo3 {
   background-color: #ff9f1c;
 }
 
-#Jogo4 {
+#Jogo3 {
   background-color: #2ec4b6;
+}
+
+#Jogo4 {
+  background-color: #ff9f1c;
 }
 
 /* Professores */
@@ -184,6 +192,10 @@ section {
 .btn-secondary:hover {
   background: var(--cor-primaria);
   color: white;
+}
+
+#SaibaMais {
+  text-decoration: none;
 }
 
 /* Rodapé */
