@@ -111,6 +111,23 @@ body {
 }
 
 /* Seções */
+
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #fff;
+    color: #2CCFCF;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    background: #e8e8e8;
+}
+
 section {
   padding: 3rem 2rem;
   text-align: center;
@@ -131,12 +148,16 @@ section {
 
 .card {
   background: white;
-  border-radius: 15px;
-  padding: 2rem;
+  border-radius: 20px;
+  padding: 30px;
   width: 200px;
-  height: 300px;
+  height: auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cards a {
@@ -154,6 +175,8 @@ section {
 .card img {
   width: 80px;
   margin-bottom: 1rem;
+  display: block;
+  margin: 0 auto;
 }
 
 #Jogo1 {
