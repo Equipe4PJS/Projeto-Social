@@ -3,6 +3,7 @@ node_modules/
 
 # arquivos de ambiente
 .env
+AutoPush.sh
 
 # cache e temporários
 npm-debug.log*
