@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <!-- Fonte igual ao site -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h1 class="logo">PlayClass</h1>
+
+    <!-- Mantido o form original -->
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="text" id="nome" placeholder="Nome" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" id="senha" placeholder="Senha" required>
+      </div>
+
+      <button class="btn-primary" type="submit">Entrar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <!-- Link para cadastro -->
+    <a href="cadastro.html" class="link">Criar uma conta</a>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
