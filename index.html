@@ -1,118 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PlayClass</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayClass | Educação Gamificada</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
-
 <body>
 
 <header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo">PlayClass</div>
 
-  <div class="logo">PlayClass</div>
+        <div class="nav-right">
+            <nav>
+                <ul class="menu-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#jogos">Jogos</a></li>
+                    <li><a href="#professores">Professores</a></li>
+                </ul>
+            </nav>
 
-  <div class="nav-container">
-
-    <!-- PERFIL DO USUÁRIO -->
-    <div class="user-profile" id="perfilContainer">
-
-      <div class="user-info">
-        <span class="user-name" id="nomeUsuario">Carregando...</span>
-        <span class="user-role" id="funcaoUsuario"></span>
-      </div>
-
-      <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto">
-
-      <div class="perfil-menu" id="perfilMenu">
-        <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
-        <div class="menu-item logout" onclick="logout()">Sair</div>
-      </div>
-
+            <div class="user-profile" id="perfilContainer">
+                <div class="user-info">
+                    <span class="user-name" id="nomeUsuario">Carregando...</span>
+                    <span class="user-role" id="funcaoUsuario">Estudante</span>
+                </div>
+                <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto de Perfil">
+                
+                <div class="perfil-menu" id="perfilMenu">
+                    <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
+                    <div class="menu-item logout" onclick="logout()">Sair</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <nav>
-      <ul class="menu-links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#jogos">Jogos</a></li>
-        <li><a href="#professores">Professores</a></li>
-      </ul>
-    </nav>
-
-  </div>
 </header>
 
-<section class="hero">
-  <h1>Aprender nunca foi tão divertido!</h1>
-  <p>
-    Com o PlayClass, as crianças aprendem brincando em um mundo
-    cheio de desafios e descobertas.
-  </p>
-  <a href="#jogos" class="btn-primary">Começar a jogar</a>
-</section>
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Aprender nunca foi tão divertido!</h1>
+                <p>Unimos o poder dos jogos com a ciência da educação para criar uma experiência única. No PlayClass, cada desafio é um degrau para o futuro do seu filho.</p>
+                <div class="hero-btns">
+                    <a href="#jogos" class="btn-primary">Explorar Jogos</a>
+                    <a href="#sobre" class="btn-outline">Conhecer o Método</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="sobre" class="sobre">
-  <h2>O que é o PlayClass?</h2>
-  <p>
-    O PlayClass é uma plataforma de educação infantil gamificada,
-    onde cada atividade é uma aventura! As crianças desenvolvem
-    habilidades cognitivas, sociais e emocionais enquanto exploram
-    mundos de aprendizado interativo.
-  </p>
-</section>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que é o PlayClass?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="sobre-grid">
+                <div class="sobre-text">
+                    <p>O PlayClass é uma plataforma de educação infantil totalmente gamificada. Entendemos que o engajamento é a chave para a retenção do conhecimento. Por isso, transformamos o currículo escolar em uma jornada épica.</p>
+                    <p>Nossa metodologia foca no desenvolvimento de <strong>habilidades socioemocionais (Soft Skills)</strong>, raciocínio lógico e colaboração, preparando as crianças para os desafios do século XXI enquanto elas se divertem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="jogos" class="jogos">
-  <h2>Jogos Educativos</h2>
+    <section id="jogos" class="jogos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Catálogo de Aventuras</h2>
+                <p>Escolha um mundo e comece sua jornada hoje mesmo.</p>
+            </div>
 
-  <div class="cards">
+            <div class="cards-grid">
+                <article class="card" id="Jogo1">
+                    <div class="card-icon"><img src="img/cerebro.png" alt="Cérebro"></div>
+                    <h3>Missão do Conhecimento</h3>
+                    <p>Viaje pelo tempo e pelo espaço explorando os reinos da História, Ciência e Matemática em uma jornada RPG incrível.</p>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
 
-    <div class="card" id="Jogo1">
-      <img src="img/cerebro.png" />
-      <h3>Missão do Conhecimento</h3>
-      <p>Explore os Reinos da História, Ciência e da Matemática.</p>
-      <a href="#" class="download-btn">Baixar</a>
-    </div>
+                <article class="card" id="Jogo2">
+                    <div class="card-icon"><img src="img/prancheta.png" alt="Quiz"></div>
+                    <h3>QuizShow Live</h3>
+                    <p>Teste seus conhecimentos em tempo real contra outros jogadores e suba no ranking global da sabedoria.</p>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
 
-    <div class="card" id="Jogo2">
-      <img src="img/prancheta.png" />
-      <h3>QuizShow</h3>
-      <p>Divirta-se respondendo perguntas de várias disciplinas.</p>
-      <a href="#" class="download-btn">Baixar</a>
-    </div>
+                <article class="card" id="Jogo3">
+                    <div class="card-icon"><img src="img/castelo.png" alt="Cidade"></div>
+                    <h3>Build City</h3>
+                    <p>Gerencie recursos e construa sua própria civilização enquanto resolve problemas complexos de lógica e estratégia.</p>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
 
-    <div class="card" id="Jogo3">
-      <img src="img/castelo.png" />
-      <h3>Build City</h3>
-      <p>Defenda sua cidade usando cartas educativas.</p>
-      <a href="#" class="download-btn">Baixar</a>
-    </div>
+                <article class="card" id="Jogo4">
+                    <div class="card-icon"><img src="img/virtual-lab.png" alt="Laboratório"></div>
+                    <h3>Virtual-Lab</h3>
+                    <p>Um laboratório seguro para realizar experimentos químicos fascinantes e entender as leis da física na prática.</p>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <div class="card" id="Jogo4">
-      <img src="img/virtual-lab.png" />
-      <h3>Virtual-Lab</h3>
-      <p>Descubra reações químicas interativas.</p>
-      <a href="#" class="download-btn">Baixar</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="professores" class="professores">
-  <h2>Para Educadores</h2>
-  <p>Ferramentas para acompanhar o progresso dos alunos.</p>
-  <a href="#" class="btn-secondary">Saiba mais</a>
-</section>
+    <section id="professores" class="professores-section">
+        <div class="container">
+            <div class="prof-card">
+                <h2>Espaço do Educador</h2>
+                <p>Tenha em mãos relatórios detalhados de desempenho, acompanhe o progresso individual de cada aluno e utilize nossas ferramentas de análise para personalizar o ensino.</p>
+                <a href="#" class="btn-white">Acessar Painel do Professor</a>
+            </div>
+        </div>
+    </section>
+</main>
 
 <footer class="footer">
-  <p>© 2025 PlayClass - Todos os direitos reservados</p>
-  <p>
-    <a href="#">Política de Privacidade</a> |
-    <a href="#">Termos de Uso</a>
-  </p>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">PlayClass</div>
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Suporte</a>
+            </nav>
+            <p class="copyright">© 2025-2026 PlayClass - Tecnologia na Educação</p>
+        </div>
+    </div>
 </footer>
 
 <script src="script.js"></script>
