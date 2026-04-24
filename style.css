@@ -264,7 +264,7 @@ section { padding: 100px 0; }
 /* ================= FOOTER ================= */
 
 .footer {
-  background: var(--cor-primaria-dark); /* Um verde levemente mais fechado para o rodapé */
+  background: var(--cor-primaria); /* Um verde levemente mais fechado para o rodapé */
   color: white;
   padding: 60px 0 30px;
 }
