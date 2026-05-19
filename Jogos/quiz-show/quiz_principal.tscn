@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://ca7niaiem13pt"]
+
+[ext_resource type="Script" uid="uid://dmyhdwfhgusp7" path="res://quiz_principal.gd" id="1_suj8s"]
+[ext_resource type="AudioStream" uid="uid://dgk1oha8wqqek" path="res://certa-resposta-show-do-milhao.mp3" id="2_12cat"]
+[ext_resource type="StyleBox" uid="uid://bj4srrf8pbiki" path="res://ButtonStyle.tres" id="2_lfvko"]
+[ext_resource type="AudioStream" uid="uid://chnkvejwdeo7n" path="res://silvio-santos-abertura-show-do-milhao.mp3" id="2_makle"]
+[ext_resource type="StyleBox" uid="uid://bg8ij5nqkruxs" path="res://ButtonStyleHover.tres" id="3_4mobk"]
+[ext_resource type="AudioStream" uid="uid://cy8ljoxiosy7c" path="res://silvio-santos-que-pena-voce-errou.mp3" id="3_lfvko"]
+
+[sub_resource type="Gradient" id="Gradient_4mobk"]
+offsets = PackedFloat32Array(0, 0.42771083, 1)
+colors = PackedColorArray(4.2114408e-08, 0.058983997, 0.18801501, 1, 0.14900085, 0.21534441, 0.5807923, 1, 0.07869614, 0.121088855, 0.36293143, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ra6x3"]
+gradient = SubResource("Gradient_4mobk")
+fill = 1
+
+[node name="QuizPrincipal" type="Control" unique_id=239912660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_suj8s")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=583892287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ra6x3")
+
+[node name="TextoPergunta" type="Label" parent="." unique_id=422300185]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_right = 126.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 42
+text = "Qual o maior oceano do mundo?"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1789993132]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1224146425]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Pacífico"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1112563582]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Atlântico"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1970602727]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Índico"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=38489996]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Nórdico"
+
+[node name="SomSucesso" type="AudioStreamPlayer2D" parent="." unique_id=342169920]
+stream = ExtResource("2_12cat")
+
+[node name="SomErro" type="AudioStreamPlayer2D" parent="." unique_id=171104817]
+stream = ExtResource("3_lfvko")
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=130239020]
+stream = ExtResource("2_makle")
+volume_db = -20.0
+autoplay = true
+
+[node name="PlacarDinheiro" type="Label" parent="." unique_id=1487463663]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -268.0
+offset_top = -83.0
+offset_right = -57.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.72156864, 0.5254902, 0.043137256, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 35
+text = "Prêmio: R$ 0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=982689498]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -79.0
+offset_right = 223.0
+offset_bottom = -29.0
+grow_vertical = 0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnPular" type="Button" parent="HBoxContainer" unique_id=747534670]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Pular"
+
+[node name="BtnCartas" type="Button" parent="HBoxContainer" unique_id=1162078379]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_lfvko")
+theme_override_styles/hover = ExtResource("3_4mobk")
+theme_override_styles/disabled = ExtResource("2_lfvko")
+text = "Cartas"
