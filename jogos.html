@@ -1,50 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jogos</title>
-    <link rel="stylesheet" href="jogos.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayClass | Catálogo de Jogos</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <section id="jogos" class="jogos">
-    <h2>Jogos Educativos</h2>
-    <div class="cards">
-        <div class="card" id="Jogo1">
-          <img src="img/cerebro.png" alt="Missão do" />
-          <h3>Missão do Conhecimento</h3>
-          <p>Explore os Reinos da História, Ciência e da Matemática, coletando itens e aprendendo a derrotar o chefe.</p>
-    <a href="Jogos/MissaoDoConhecimento.exe" download class="download-btn">
-        Baixar
-    </a>
-        </div>
-      
-        <div class="card" id="Jogo2">
-          <img src="img/prancheta.png" alt="QuizShow" />
-          <h3>QuizShow</h3>
-          <p>Divirta-se respondendo perguntas de ciência, matemática, história, geografia e entre outros.</p>
-          <a href="" class="download-btn">
-        Baixar
-    </a>
-        </div>
 
-        <div class="card" id="Jogo3">
-          <img src="img/castelo.png" alt="Build City" />
-          <h3>Build City</h3>
-          <p>Aprenda sobre as mais diversas disciplinas invocando suas próprias cartas para defender sua cidade.</p>
-          <a href="" class="download-btn">
-        Baixar
-    </a>
-        </div>
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">PlayClass</a></div>
 
-        <div class="card" id="Jogo4">
-          <img src="img/virtual-lab.png" alt="Virtual-Lab">
-          <h3>Virtual-Lab</h3>
-          <p>Descubra o que acontece ao misturar as diferentes substâncias químicas e as veja reagindo.</p>
-          <a href="" class="download-btn">
-        Baixar
-    </a>
+        <div class="nav-right">
+            <nav>
+                <ul class="menu-links">
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="#" class="active">Jogos</a></li>
+                    <li><a href="index.html#professores">Professores</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile" id="perfilContainer">
+                <div class="user-info">
+                    <span class="user-name" id="nomeUsuario">Carregando...</span>
+                    <span class="user-role" id="funcaoUsuario">Estudante</span>
+                </div>
+                <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto de Perfil">
+                
+                <div class="perfil-menu" id="perfilMenu">
+                    <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
+                    <div class="menu-item logout" onclick="logout()">Sair</div>
+                </div>
+            </div>
         </div>
     </div>
+</header>
+
+<main>
+    <section class="jogos-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1>Seu Próximo Desafio Começa Aqui</h1>
+                <p>Explore nossa biblioteca de mundos virtuais. Filtre por sua matéria favorita e comece a pontuar!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="filtros-section">
+        <div class="container">
+            <div class="filtros-wrapper">
+                <div class="busca-box">
+                    <input type="text" id="searchGame" placeholder="Buscar jogo pelo nome...">
+                </div>
+                <div class="categorias-tags">
+                    <button class="tag-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                    <button class="tag-btn" onclick="filtrarCategoria('matematica')">Matemática</button>
+                    <button class="tag-btn" onclick="filtrarCategoria('ciencias')">Ciências</button>
+                    <button class="tag-btn" onclick="filtrarCategoria('historia')">História</button>
+                    <button class="tag-btn" onclick="filtrarCategoria('logica')">Lógica</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="jogos-catalogo">
+        <div class="container">
+            <div class="cards-grid">
+                
+                <article class="card" id="Jogo1" data-categoria="historia matematica ciencias">
+                    <div class="card-icon"><img src="img/cerebro.png" alt="Cérebro"></div>
+                    <span class="game-badge">RPG Educativo</span>
+                    <h3>Missão do Conhecimento</h3>
+                    <p>Viaje pelo tempo e pelo espaço explorando os reinos da História, Ciência e Matemática em uma jornada RPG incrível.</p>
+                    <div class="card-footer-info">
+                        <span class="idade-recomendada">🎯 6 a 12 anos</span>
+                    </div>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+
+                <article class="card" id="Jogo2" data-categoria="todos">
+                    <div class="card-icon"><img src="img/prancheta.png" alt="Quiz"></div>
+                    <span class="game-badge">Competitivo</span>
+                    <h3>QuizShow Live</h3>
+                    <p>Teste seus conhecimentos em tempo real contra outros jogadores e suba no ranking global da sabedoria.</p>
+                    <div class="card-footer-info">
+                        <span class="idade-recomendada">🎯 Livre</span>
+                    </div>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+
+                <article class="card" id="Jogo3" data-categoria="logica">
+                    <div class="card-icon"><img src="img/castelo.png" alt="Cidade"></div>
+                    <span class="game-badge">Estratégia</span>
+                    <h3>Build City</h3>
+                    <p>Gerencie recursos e construa sua própria civilização enquanto resolve problemas complexos de lógica e estratégia.</p>
+                    <div class="card-footer-info">
+                        <span class="idade-recomendada">🎯 +8 anos</span>
+                    </div>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+
+                <article class="card" id="Jogo4" data-categoria="ciencias">
+                    <div class="card-icon"><img src="img/virtual-lab.png" alt="Laboratório"></div>
+                    <span class="game-badge">Simulador</span>
+                    <h3>Virtual-Lab</h3>
+                    <p>Um laboratório seguro para realizar experimentos químicos fascinantes e entender as leis da física na prática.</p>
+                    <div class="card-footer-info">
+                        <span class="idade-recomendada">🎯 +10 anos</span>
+                    </div>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+
+                <article class="card" id="Jogo5" data-categoria="matematica">
+                    <div class="card-icon"><img src="img/calculadora.png" alt="Matemática"></div>
+                    <span class="game-badge">Raciocínio</span>
+                    <h3>MathRunners</h3>
+                    <p>Corra contra o tempo resolvendo equações aceleradas para desviar de obstáculos e bater recordes.</p>
+                    <div class="card-footer-info">
+                        <span class="idade-recomendada">🎯 6 a 10 anos</span>
+                    </div>
+                    <a href="#" class="download-btn">Baixar Agora</a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">PlayClass</div>
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Suporte</a>
+            </nav>
+            <p class="copyright">© 2025-2026 PlayClass - Tecnologia na Educação</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
