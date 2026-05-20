@@ -1,11 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayClass | Painel do Professor</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="professores.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    
+
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">PlayClass</a></div>
+
+        <div class="nav-right">
+            <nav>
+                <ul class="menu-links">
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="professores.html" class="active">Professores</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile" id="perfilContainer">
+                <div class="user-info">
+                    <span class="user-name" id="nomeUsuario">Prof. Mariana</span>
+                    <span class="user-role" id="funcaoUsuario">Educador</span>
+                </div>
+                <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto de Perfil">
+                
+                <div class="perfil-menu" id="perfilMenu">
+                    <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
+                    <div class="menu-item logout" onclick="logout()">Sair</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="dashboard-container">
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Painel do Educador</h1>
+            <p>Monitore o engajamento e a evolução cognitiva das suas turmas em tempo real.</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h4>Turmas Ativas</h4>
+                <p class="metric-value">03</p>
+            </div>
+            <div class="metric-card">
+                <h4>Alunos Conectados</h4>
+                <p class="metric-value">42</p>
+            </div>
+            <div class="metric-card">
+                <h4>Missões Concluídas</h4>
+                <p class="metric-value">158</p>
+            </div>
+            <div class="metric-card emphasis">
+                <h4>Habilidade em Destaque</h4>
+                <p class="metric-value">Raciocínio Lógico</p>
+            </div>
+        </div>
+
+        <div class="dashboard-content-grid">
+            <section class="panel-section">
+                <h3>Minhas Turmas</h3>
+                <div class="turma-row">
+                    <div class="turma-info">
+                        <strong>Turma Alfa (1º Ano)</strong>
+                        <span>15 Alunos ativos hoje</span>
+                    </div>
+                    <button class="btn-dashboard">Ver Desempenho</button>
+                </div>
+                <div class="turma-row">
+                    <div class="turma-info">
+                        <strong>Turma Beta (2º Ano)</strong>
+                        <span>18 Alunos ativos hoje</span>
+                    </div>
+                    <button class="btn-dashboard">Ver Desempenho</button>
+                </div>
+                <div class="turma-row">
+                    <div class="turma-info">
+                        <strong>Oficina Social (Contraturno)</strong>
+                        <span>9 Alunos ativos hoje</span>
+                    </div>
+                    <button class="btn-dashboard">Ver Desempenho</button>
+                </div>
+            </section>
+
+            <section class="panel-section side-panel">
+                <h3>Central Pedagógica</h3>
+                <div class="resource-link">
+                    <h4>Relatório Geral em PDF</h4>
+                    <p>Baixe as métricas consolidadas para reuniões de pais ou conselho.</p>
+                    <a href="#">Gerar PDF</a>
+                </div>
+                <div class="resource-link">
+                    <h4>Mapeamento BNCC</h4>
+                    <p>Veja quais códigos e competências da base nacional cada jogo trabalhou.</p>
+                    <a href="#">Visualizar Tabela</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">PlayClass</div>
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Suporte</a>
+            </nav>
+            <p class="copyright">© 2025-2026 PlayClass - Tecnologia na Educação</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
