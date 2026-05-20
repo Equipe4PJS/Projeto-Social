@@ -1,11 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayClass | Sobre Nós</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sobre.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    
+
+<header class="navbar">
+    <div class="container nav-wrapper">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">PlayClass</a></div>
+
+        <div class="nav-right">
+            <nav>
+                <ul class="menu-links">
+                    <li><a href="sobre.html" class="active">Sobre</a></li>
+                    <li><a href="jogos.html">Jogos</a></li>
+                    <li><a href="professores.html">Professores</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile" id="perfilContainer">
+                <div class="user-info">
+                    <span class="user-name" id="nomeUsuario">Carregando...</span>
+                    <span class="user-role" id="funcaoUsuario">Estudante</span>
+                </div>
+                <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto de Perfil">
+                
+                <div class="perfil-menu" id="perfilMenu">
+                    <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
+                    <div class="menu-item logout" onclick="logout()">Sair</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="about-hero">
+        <div class="container">
+            <h1>Nossa Missão Épica</h1>
+            <p>Transformar a educação infantil através do poder dos jogos e da inclusão social.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Por que o PlayClass existe?</h2>
+                    <p>O PlayClass nasceu como um projeto social focado em democratizar o acesso à educação de qualidade. Sabemos que o ensino tradicional muitas vezes falha em reter a atenção dos pequenos. Acreditamos que o jogo não é uma distração, mas sim a ferramenta pedagógica mais poderosa do século XXI.</p>
+                    <p>Ao transformar conteúdos curriculares de Matemática, Ciências e História em missões e conquistas, garantimos que crianças de qualquer contexto social possam aprender sorrindo, desenvolvendo autonomia e amor pelo conhecimento.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>+5</h3>
+                        <p>Jogos Educativos</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Alinhado à BNCC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pilares-section">
+                <div class="section-header">
+                    <h2>Nossos Três Pilares</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="pilares-grid">
+                    <div class="pilar-card">
+                        <div class="pilar-num">01</div>
+                        <h3>Gamificação Ativa</h3>
+                        <p>O aluno deixa de ser um espectador passivo e passa a ser o herói da sua própria aprendizagem, resolvendo problemas reais.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <h3>Soft Skills</h3>
+                        <div class="pilar-num">02</div>
+                        <p>Foco total em empatia, resiliência ao erro, colaboração em equipe e pensamento crítico para os desafios do futuro.</p>
+                    </div>
+                    <div class="pilar-card">
+                        <div class="pilar-num">03</div>
+                        <h3>Inclusão e Impacto</h3>
+                        <p>Uma plataforma leve, acessível e moldada para dar suporte a projetos sociais e escolas que precisam de inovação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">PlayClass</div>
+            <nav class="footer-nav">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Suporte</a>
+            </nav>
+            <p class="copyright">© 2025-2026 PlayClass - Tecnologia na Educação</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
