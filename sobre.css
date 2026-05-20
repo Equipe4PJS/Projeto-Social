@@ -1,1 +1,154 @@
-@charset "UTF-8"
+@charset "UTF-8";
+
+/* Estilos específicos da página Sobre */
+
+.about-hero {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.about-content {
+    padding: 60px 0;
+    background-color: #f9f9fb;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Fallback se não usar grid */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-text h2 {
+    font-family: 'Baloo 2', cursive;
+    color: #2d3436;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-family: 'Poppins', sans-serif;
+    color: #636e72;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-bottom: 4px solid #fdcb6e;
+}
+
+.stat-box h3 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.5rem;
+    color: #6c5ce7;
+    margin: 0;
+}
+
+.stat-box p {
+    font-family: 'Poppins', sans-serif;
+    color: #2d3436;
+    margin: 5px 0 0 0;
+    font-weight: 600;
+}
+
+/* Pilares */
+.pilares-section {
+    margin-top: 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: 'Baloo 2', cursive;
+    color: #2d3436;
+    font-size: 2.2rem;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: #6c5ce7;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pilar-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.pilar-card:hover {
+    transform: translateY(-5px);
+}
+
+.pilar-num {
+    font-family: 'Baloo 2', cursive;
+    font-size: 3.5rem;
+    color: rgba(108, 92, 231, 0.1);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+}
+
+.pilar-card h3 {
+    font-family: 'Baloo 2', cursive;
+    color: #2d3436;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.pilar-card p {
+    font-family: 'Poppins', sans-serif;
+    color: #636e72;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
