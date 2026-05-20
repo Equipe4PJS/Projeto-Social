@@ -310,3 +310,11 @@ section { padding: 100px 0; }
 }
 
 .menu-item:hover { background: #f8f9fa; }
+
+/* Efeito de sublinhado para a página atual na Navbar */
+.menu-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px; /* Afasta o risco um pouquinho do texto para ficar elegante */
+    text-decoration-thickness: 3px; /* Deixa a linha um pouco mais grossinha, combinando com a fonte Baloo */
+    font-weight: 600; /* Garante que o texto fique em destaque */
+}
