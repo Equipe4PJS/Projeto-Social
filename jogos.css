@@ -69,6 +69,11 @@ section {
   color: var(--cor-branco);
 }
 
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -94,7 +99,7 @@ section {
   border-bottom: 2px solid var(--cor-branco);
 }
 
-/* Componente de Perfil (Menu Dropdown) */
+/* Componente de Perfil (Menu Dropdown Animado) */
 .user-profile {
   display: flex;
   align-items: center;
@@ -129,16 +134,32 @@ section {
   object-fit: cover;
 }
 
+/* CORREÇÃO: Estrutura preparada para transição suave (Fade-in + Deslizamento) */
 .perfil-menu {
-  display: none; /* Controlado via JS script.js */
   position: absolute;
-  top: 110%;
+  top: 120%;
   right: 0;
   background: var(--cor-branco);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   width: 150px;
   overflow: hidden;
+  z-index: 1100;
+  
+  /* Estado inicial escondido */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  
+  /* Tempo da transição suave */
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+/* CORREÇÃO: Classe ativada via JS/Clique para mostrar suavemente */
+.perfil-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .menu-item {
@@ -483,7 +504,7 @@ section {
 
 /* Rodapé */
 .footer {
-  background-color: #249b90; /* Tom sutilmente mais escuro que o secundário */
+  background-color: #249b90;
   color: var(--cor-branco);
   padding: 2.5rem 0;
   font-size: 0.95rem;
