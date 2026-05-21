@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="navbar">
+<header class="navbar" style="position: relative; z-index: 1000;">
     <div class="container nav-wrapper">
         <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">PlayClass</a></div>
 
@@ -25,16 +25,16 @@
                 </ul>
             </nav>
 
-            <div class="user-profile" id="perfilContainer">
+            <div class="user-profile" id="perfilContainer" onclick="var menu = document.getElementById('perfilMenu'); menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';">
                 <div class="user-info">
                     <span class="user-name" id="nomeUsuario">Carregando...</span>
                     <span class="user-role" id="funcaoUsuario">Estudante</span>
                 </div>
                 <img id="fotoPerfil" class="user-icon" src="img/default.png" alt="Foto de Perfil">
                 
-                <div class="perfil-menu" id="perfilMenu">
-                    <div class="menu-item" onclick="irParaPerfil()">Meu Perfil</div>
-                    <div class="menu-item logout" onclick="logout()">Sair</div>
+                <div class="perfil-menu" id="perfilMenu" style="display: none;">
+                    <div class="menu-item" onclick="irParaPerfil(); event.stopPropagation();">Meu Perfil</div>
+                    <div class="menu-item logout" onclick="logout(); event.stopPropagation();">Sair</div>
                 </div>
             </div>
         </div>
