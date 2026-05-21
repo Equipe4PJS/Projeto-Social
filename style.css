@@ -295,8 +295,6 @@ section { padding: 100px 0; }
   transform: translateY(10px);
   pointer-events: none;
   transition: var(--transition);
-  display: block !important;
-  visibility: hidden;
 }
 
 .perfil-menu.active {
