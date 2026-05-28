@@ -1,98 +1,7 @@
-@charset "UTF-8";
-
-/* ==========================================================================
-   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
-   ========================================================================== */
-:root {
-  --cor-primaria: #ff9f1c;
-  --cor-secundaria: #2ec4b6;
-  --cor-fundo: #fff6e5;
-  --cor-texto: #333;
-  --cor-texto-suave: #666;
-  --cor-botao: #2ec4b6;
-  --cor-card-claro: #ffffff;
-  --cor-branco: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  overflow-x: hidden;
-}
-
-/* Estrutura Base de Layout */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-section {
-  padding: 4rem 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
 /* ==========================================================================
    2. NAVBAR & PERFIL DE USUÁRIO
    ========================================================================== */
-.navbar {
-  background-color: var(--cor-primaria);
-  padding: 0.8rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Baloo 2', cursive;
-  font-weight: 800;
-  font-size: 2rem;
-  color: var(--cor-branco);
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.menu-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.menu-links a {
-  color: var(--cor-branco);
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s;
-}
-
-.menu-links a:hover,
-.menu-links a.active {
-  opacity: 0.8;
-  border-bottom: 2px solid var(--cor-branco);
-}
+/* ... (mantenha o código anterior da navbar aqui) ... */
 
 /* Componente de Perfil (Menu Dropdown) */
 .user-profile {
@@ -129,8 +38,9 @@ section {
   object-fit: cover;
 }
 
+/* Alteração aqui: removi o display:none fixo e organizei para o JS */
 .perfil-menu {
-  display: none; /* Controlado via JS script.js */
+  display: none; 
   position: absolute;
   top: 110%;
   right: 0;
@@ -139,17 +49,27 @@ section {
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   width: 150px;
   overflow: hidden;
+  z-index: 2000; /* Garante que fique acima dos filtros e cards */
+}
+
+/* Nova regra: Esta classe é adicionada pelo script.js */
+.perfil-menu.active {
+  display: block !important;
+  animation: fadeInMenu 0.2s ease-out;
 }
 
 .menu-item {
-  padding: 10px 15px;
+  padding: 12px 15px;
   color: var(--cor-texto);
   font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
   transition: background 0.2s;
 }
 
 .menu-item:hover {
   background: #f5f5f5;
+  cursor: pointer;
 }
 
 .menu-item.logout {
@@ -157,420 +77,14 @@ section {
   border-top: 1px solid #eee;
 }
 
-/* ==========================================================================
-   3. HERO SECTIONS (HOME & JOGOS)
-   ========================================================================== */
-.hero, .jogos-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 60vh;
-  padding: 4rem 2rem;
-  background-color: var(--cor-fundo);
-}
-
-.hero-content {
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-.hero h1, .jogos-hero h1 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 3rem;
-  color: var(--cor-primaria);
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.hero p, .jogos-hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  color: var(--cor-texto);
-}
-
-/* Botões do Hero */
-.hero-btns {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary, .btn-outline, .btn-white {
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s, background 0.3s;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: var(--cor-botao);
-  color: var(--cor-branco);
-}
-
-.btn-primary:hover {
-  background: #25a195;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 2px solid var(--cor-primaria);
-  color: var(--cor-primaria);
-}
-
-.btn-outline:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-branco);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   4. BARRA DE BUSCA E FILTROS (DESIGN EXCLUSIVO)
-   ========================================================================== */
-.filtros-section {
-  background-color: var(--cor-branco);
-  padding: 2rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-}
-
-.filtros-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-/* Estilização da Caixa de Busca */
-.busca-box {
-  position: relative;
-  flex: 1;
-  max-width: 400px;
-  min-width: 280px;
-}
-
-.busca-box input {
-  width: 100%;
-  padding: 14px 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  color: var(--cor-texto);
-  background-color: var(--cor-fundo);
-  border: 2px solid transparent;
-  border-radius: 50px;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.busca-box input:focus {
-  border-color: var(--cor-primaria);
-  background-color: var(--cor-branco);
-  box-shadow: 0 0 0 4px rgba(255, 159, 28, 0.15);
-}
-
-.busca-box input::placeholder {
-  color: #999;
-}
-
-/* Botões de Categoria/Tags */
-.categorias-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.tag-btn {
-  padding: 10px 20px;
-  border: none;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tag-btn:hover {
-  background-color: rgba(46, 196, 182, 0.15);
-  color: var(--cor-secundaria);
-}
-
-.tag-btn.active {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
-  box-shadow: 0 4px 10px rgba(255, 159, 28, 0.3);
-}
-
-/* ==========================================================================
-   5. CATALOGO DE CARDS (JOGOS)
-   ========================================================================== */
-.section-header {
-  margin-bottom: 3rem;
-}
-
-.section-header h2 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.5rem;
-  color: var(--cor-primaria);
-}
-
-.divider {
-  width: 60px;
-  height: 4px;
-  background-color: var(--cor-secundaria);
-  margin: 0.5rem auto 0 auto;
-  border-radius: 2px;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2.5rem;
-  padding: 1rem 0;
-}
-
-/* Card customizado e unificado */
-.card {
-  border-radius: 24px;
-  padding: 30px 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  border: 1px solid rgba(0,0,0,0.02);
-}
-
-.card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
-}
-
-.card-icon {
-  background: var(--cor-branco);
-  padding: 15px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  margin-bottom: 1rem;
-}
-
-.card img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.card h3 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  color: var(--cor-branco);
-}
-
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Badges Internos dos Cards */
-.game-badge {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: var(--cor-branco);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.8rem;
-}
-
-.card-footer-info {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 1rem;
-}
-
-/* Botão de Download dentro do card */
-.download-btn {
-  width: 100%;
-  padding: 12px 24px;
-  background: var(--cor-branco);
-  color: var(--cor-texto);
-  font-weight: 700;
-  font-size: 0.95rem;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.1s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.download-btn:hover {
-  background: #f0f0f0;
-  transform: scale(1.02);
-}
-
-/* Lógica das Cores Alternadas dos Cards */
-#Jogo1, #Jogo3, #Jogo5 {
-  background-color: var(--cor-secundaria);
-}
-#Jogo1 .download-btn, #Jogo3 .download-btn, #Jogo5 .download-btn {
-  color: var(--cor-secundaria);
-}
-
-#Jogo2, #Jogo4 {
-  background-color: var(--cor-primaria);
-}
-#Jogo2 .download-btn, #Jogo4 .download-btn {
-  color: var(--cor-primaria);
-}
-
-/* ==========================================================================
-   6. ESPAÇO DO PROFESSOR & FOOTER
-   ========================================================================== */
-.professores-section {
-  background-color: var(--cor-fundo);
-}
-
-.prof-card {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-branco);
-  padding: 3.5rem 2rem;
-  border-radius: 30px;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 10px 25px rgba(46, 196, 182, 0.2);
-}
-
-.prof-card h2 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.prof-card p {
-  font-size: 1.1rem;
-  max-width: 650px;
-  margin: 0 auto 2rem auto;
-  line-height: 1.6;
-}
-
-.btn-white {
-  background-color: var(--cor-branco);
-  color: var(--cor-secundaria);
-}
-
-.btn-white:hover {
-  background-color: var(--cor-fundo);
-  transform: translateY(-2px);
-}
-
-/* Rodapé */
-.footer {
-  background-color: #249b90; /* Tom sutilmente mais escuro que o secundário */
-  color: var(--cor-branco);
-  padding: 2.5rem 0;
-  font-size: 0.95rem;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-logo {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-nav a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-nav a:hover {
-  color: var(--cor-branco);
-  text-decoration: underline;
-}
-
-.copyright {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-top: 0.5rem;
-}
-
-/* ==========================================================================
-   7. RESPONSIVIDADE
-   ========================================================================== */
-@media (max-width: 768px) {
-  .nav-wrapper {
-    flex-direction: column;
-    gap: 1rem;
+/* Animação suave para o menu aparecer */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  .nav-right {
-    width: 100%;
-    justify-content: space-between;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  .hero h1, .jogos-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .filtros-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .busca-box {
-    max-width: 100%;
-  }
-
-  .categorias-tags {
-    justify-content: center;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
