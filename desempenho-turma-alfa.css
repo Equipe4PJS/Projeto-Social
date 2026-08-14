@@ -1,0 +1,170 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #dbe4d5; /* Tom levemente esverdeado/cinza de fundo */
+  color: #333;
+  padding: 30px;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Grid de Métricas */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.metric-card {
+  background-color: #f4f7f2;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.metric-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+
+.metric-value.text-red {
+  color: #a82323;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Seção Principal */
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: #f4f7f2;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+/* Lista de Turmas */
+.class-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #e0e6dd;
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.class-info strong {
+  font-size: 14px;
+  color: #222;
+}
+
+.class-info span {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* Botões */
+.btn-primary {
+  background-color: #1a3263;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0f1f42;
+}
+
+/* Central Pedagógica */
+.resource-item {
+  margin-bottom: 20px;
+}
+
+.resource-item strong {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.resource-item p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.resource-link {
+  font-size: 12px;
+  color: #1a3263;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.resource-link:hover {
+  text-decoration: underline;
+}
